@@ -1,6 +1,9 @@
 para crear ramas ramas en git
 # GIT branch <nombre_rama>
 
+para crear rama remoto  se ejecuta: 
+# git push --set-upstream origin caja
+
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.
