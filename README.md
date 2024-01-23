@@ -1,3 +1,6 @@
+para crear ramas ramas en git
+# GIT branch <nombre_rama>
+
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.
