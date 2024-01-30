@@ -1,1 +1,11 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bd_clases
+    username: postgres
+    password: postgres
+  jpa:
+  #  hibernate:
+  #    ddl-auto: <create | create-drop | update | validate | none>
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
