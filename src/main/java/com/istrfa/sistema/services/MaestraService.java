@@ -43,7 +43,10 @@ public class MaestraService {
     }
     public int eliminar(UUID id){
         try{
-            /******** logica ****/
+            Boolean existeDato=maestraRepository.existsById(id);
+            if(existeDato){
+                maestraRepository.deleteById(id);
+            }
             return 200;
         }catch(Exception ex){
             return 500;

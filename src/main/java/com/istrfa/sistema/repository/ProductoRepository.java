@@ -8,12 +8,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ProductoRepository extends JpaRepository<Producto, UUID> {
-     long deleteByIdProducto(UUID idProducto);
-
     @Query("""
-    select p from producto p
-    where lower(p.nombre) like '?1%' """)
+    SELECT P FROM Producto P
+    WHERE lower(P.nombre) like '?1%'  """)
     List<Producto> findByNombre(String nombre);
-
 
 }

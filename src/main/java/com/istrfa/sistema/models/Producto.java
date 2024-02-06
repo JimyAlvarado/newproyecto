@@ -21,7 +21,7 @@ public class Producto {
     private UUID tipo;
 
     @Column(name = "cantidad")
-    private Double orden=0.0;
+    private Double cantidad=0.0;
 
     @Column(name = "precio")
     private Double precio=0.0;
@@ -33,7 +33,7 @@ public class Producto {
     private UUID categoria;
 
     @Column(name = "usuario_id", nullable = false)
-    private UUID usuario;
+    private UUID usuarioId;
 
     @Column(name = "fecha_registro", nullable = false)
     private Date fechaRegistro;

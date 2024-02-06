@@ -8,24 +8,21 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name="tb_maestra", schema="maestros")
-public class Maestra {
+@Table(name="ventas", schema = "operaciones")
+public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
-    private UUID idMaestra;
-    @Column(name = "prefijo", nullable = false)
-    private String prefijo;
-    @Column(name = "nombre", nullable = false)
-    private String nombre;
-    @Column(name = "orden")
-    private int orden=0;
-    @Column(name = "estado")
-    private int estado=1;
-    @Column(name = "padre_id")
-    private UUID padreId;
+    private UUID idVenta;
+
+    @Column(name = "cliente_id", nullable = false)
+    private UUID clienteId;
     @Column(name = "usuario_id", nullable = false)
     private UUID usuarioId;
+
+    @Column(name = "estado", nullable = false)
+    private UUID estado;
+
     @Column(name = "fecha_registro", nullable = false)
     private Date fechaRegistro;
 }

@@ -44,7 +44,7 @@ public class ProductoService {
         try{
             Boolean existeDato=productoRepository.existsById(id);
             if(existeDato){
-                productoRepository.deleteByIdProducto(id);
+                productoRepository.deleteById(id);
             }
             return 200;
         }catch(Exception ex){
