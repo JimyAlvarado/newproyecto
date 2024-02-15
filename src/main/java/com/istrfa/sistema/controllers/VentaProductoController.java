@@ -42,3 +42,4 @@ public class VentaProductoController {
         return new ResponseEntity<>("Registro Eliminado correctamente", HttpStatus.OK);
     }
 }
+

@@ -22,7 +22,7 @@ public class ClienteController {
     @GetMapping()
     public ResponseEntity<List<DTOCliente>> listar(@RequestBody DTOCliente dto) {
         List<DTOCliente> dato = clientesServices.listar(dto);
-        return new ResponseEntity<List<DTOCliente>>(dato, HttpStatus.OK);
+        return new ResponseEntity<>(dato, HttpStatus.OK);
 
     }
 

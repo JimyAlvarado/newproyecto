@@ -1,17 +1,16 @@
 package com.istrfa.sistema.services;
 
 import com.istrfa.sistema.controllers.dto.DTOVenta;
-import com.istrfa.sistema.controllers.dto.DTOVentaProducto;
 import com.istrfa.sistema.models.Venta;
-import com.istrfa.sistema.models.VentaProducto;
 import com.istrfa.sistema.repository.VentaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
+@Service
 public class VentaService {
     @Autowired
     private ModelMapper modelMapper;
