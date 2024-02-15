@@ -18,25 +18,25 @@ public class VentaController {
     @Autowired
     VentaService ventaservice;
 
-    @GetMapping()
+    @GetMapping("/listar")
     public ResponseEntity<List<DTOVenta>> listar(@RequestBody DTOVenta dto) {
         List<DTOVenta> dato = ventaservice.listar(dto);
         return new ResponseEntity<>(dato, HttpStatus.OK);
     }
 
-    @PostMapping()
+    @PostMapping("/guardar")
     public ResponseEntity<String> guardar(@RequestBody DTOVenta dto) {
         ventaservice.guardar(dto);
         return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
     }
 
-    @PutMapping()
+    @PutMapping("actualizar/{id}")
     public ResponseEntity<String> actualizar(@RequestBody DTOVenta dto, @PathVariable(name = "id") UUID id) {
         ventaservice.actualizar(dto, id);
         return new ResponseEntity<>("Registro Actualizado correctamente", HttpStatus.OK);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminar(@PathVariable(name = "id") UUID id) {
         ventaservice.eliminar(id);
         return new ResponseEntity<>("Registro Eliminado correctamente", HttpStatus.OK);

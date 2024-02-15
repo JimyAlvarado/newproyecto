@@ -18,25 +18,32 @@ public class MaestraController {
     @Autowired
     MaestraService service;
 
-    @GetMapping()
+    @GetMapping("/listar")
     public ResponseEntity<List<DTOMaestra>> listar(@RequestBody DTOMaestra dto) {
         List<DTOMaestra> dato = service.listar(dto);
         return new ResponseEntity<>(dato, HttpStatus.OK);
     }
 
-    @PostMapping()
-    public ResponseEntity<String> guardar(@RequestBody DTOMaestra dto) {
-        service.guardar(dto);
-        return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
+    @GetMapping("/saludo")
+    public ResponseEntity<String> saludo(){
+        return new ResponseEntity<>("llego a saludo", HttpStatus.OK);
     }
 
-    @PutMapping()
+    @PostMapping("/guardar")
+    public ResponseEntity<String> guardar(@RequestBody DTOMaestra dto) {
+        log.info("validando dto maestra",dto);
+        return new ResponseEntity<>("llego a saludo", HttpStatus.OK);
+        //service.guardar(dto);
+        //return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
+    }
+
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<String> actualizar(@RequestBody DTOMaestra dto, @PathVariable(name = "id") UUID id) {
         service.actualizar(dto, id);
         return new ResponseEntity<>("Registro Actualizado correctamente", HttpStatus.OK);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminar(@PathVariable(name = "id") UUID id) {
         service.eliminar(id);
         return new ResponseEntity<>("Registro Eliminado correctamente", HttpStatus.OK);
