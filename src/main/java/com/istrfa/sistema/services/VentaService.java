@@ -19,7 +19,7 @@ public class VentaService {
     @Autowired
     VentaRepository repository;
 
-    public int guardar(DTOVentaProducto dto){
+    public int guardar(DTOVenta dto){
         try{
             Venta entity=this.modelMapper.map(dto,Venta.class);
             repository.save(entity);

@@ -44,7 +44,6 @@ public class ClienteController {
     public ResponseEntity<String> eliminar(@PathVariable(name = "id") UUID id) {
         clientesServices.eliminar(id);
         return new ResponseEntity<>("Registro Eliminado correctamente", HttpStatus.OK);
-
     }
 }
 

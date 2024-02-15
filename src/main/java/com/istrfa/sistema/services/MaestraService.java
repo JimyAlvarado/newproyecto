@@ -24,7 +24,7 @@ public class MaestraService {
         }
     }
 
-    public List<DTOMaestra> leer(DTOMaestra dto){
+    public List<DTOMaestra> listar(DTOMaestra dto){
         try{
             List<DTOMaestra> listdatos = null;
             /********* logica ******/
