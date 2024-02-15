@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/producto")
+@RequestMapping("/v1/producto")
 @Slf4j
 public class ProductoController {
 

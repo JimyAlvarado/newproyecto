@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/v1/cliente")
 @Slf4j
 public class ClienteController {
 
@@ -30,7 +30,6 @@ public class ClienteController {
     public ResponseEntity<String> guardar(@RequestBody DTOCliente dto) {
         clientesServices.guardar(dto);
         return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
-
     }
 
     @PutMapping("/actualizar/{id}")

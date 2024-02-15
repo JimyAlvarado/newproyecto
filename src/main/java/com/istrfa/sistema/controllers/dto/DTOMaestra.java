@@ -11,17 +11,15 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
-@Data
-@JsonIgnoreType
-public class DTOMaestra {
-
+@Getter
+@Setter
+public class DTOMaestra implements Serializable {
+    private UUID idMaestra=null;
     private String nombre;
-    /*private UUID idMaestra=null;
     private String prefijo;
     private int orden=0;
     private int estado=1;
     private UUID padreId=null;
     private UUID usuario;
-    @JsonIgnore
-    private Date fechaRegistro;*/
+    private Date fechaRegistro;
 }

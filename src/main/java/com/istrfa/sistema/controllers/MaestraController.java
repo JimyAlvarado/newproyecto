@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/maestra")
+@RequestMapping("/v1/maestra")
 @Slf4j
 public class MaestraController {
     @Autowired
@@ -24,17 +24,10 @@ public class MaestraController {
         return new ResponseEntity<>(dato, HttpStatus.OK);
     }
 
-    @GetMapping("/saludo")
-    public ResponseEntity<String> saludo(){
-        return new ResponseEntity<>("llego a saludo", HttpStatus.OK);
-    }
-
     @PostMapping("/guardar")
     public ResponseEntity<String> guardar(@RequestBody DTOMaestra dto) {
-        log.info("validando dto maestra",dto);
-        return new ResponseEntity<>("llego a saludo", HttpStatus.OK);
-        //service.guardar(dto);
-        //return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
+        service.guardar(dto);
+        return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
     }
 
     @PutMapping("/actualizar/{id}")

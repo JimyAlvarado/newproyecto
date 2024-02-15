@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/venta")
+@RequestMapping("/v1/venta")
 @Slf4j
 public class VentaController {
     @Autowired
