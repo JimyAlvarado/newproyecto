@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+<<<<<<< HEAD
 @RequestMapping("/cliente")
 @Slf4j
 public class ClienteController {
@@ -45,5 +46,39 @@ public class ClienteController {
     public ResponseEntity<String> eliminar(@PathVariable(name="id") UUID id){
         clienteService.eliminar(id);
         return new ResponseEntity<>("Registro eliminado correctamente", HttpStatus.OK);
+=======
+@RequestMapping("/v1/cliente")
+@Slf4j
+public class ClienteController {
+
+    @Autowired
+    ClienteService clientesServices;
+
+    @GetMapping("/listar")
+    public ResponseEntity<List<DTOCliente>> listar(@RequestBody DTOCliente dto) {
+        List<DTOCliente> dato = clientesServices.listar(dto);
+        return new ResponseEntity<>(dato, HttpStatus.OK);
+
+    }
+
+    @PostMapping("/guardar")
+    public ResponseEntity<String> guardar(@RequestBody DTOCliente dto) {
+        clientesServices.guardar(dto);
+        return new ResponseEntity<>("Registro guardado correctamente", HttpStatus.OK);
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<String> actualizar(@RequestBody DTOCliente dto, @PathVariable(name = "id") UUID id) {
+        clientesServices.actualizar(dto, id);
+        return new ResponseEntity<>("Registro Actualizado correctamente", HttpStatus.OK);
+
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable(name = "id") UUID id) {
+        clientesServices.eliminar(id);
+        return new ResponseEntity<>("Registro Eliminado correctamente", HttpStatus.OK);
+>>>>>>> 18704b0949f20a5022cc72952d1ed7d1946bbaf7
     }
 }
+

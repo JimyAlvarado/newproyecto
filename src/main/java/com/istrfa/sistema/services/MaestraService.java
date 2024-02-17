@@ -43,6 +43,26 @@ public class MaestraService {
         }
     }
 
+<<<<<<< HEAD
+=======
+    public List<DTOMaestra> listar(DTOMaestra dto){
+        try{
+            List<DTOMaestra> listdatos = null;
+            /********* logica ******/
+            return listdatos;
+        }catch (Exception ex){
+            return null;
+        }
+    }
+    public int actualizar(DTOMaestra dto, UUID id){
+        try{
+            /******** logica ****/
+            return 200;
+        }catch(Exception ex){
+            return 500;
+        }
+    }
+>>>>>>> 18704b0949f20a5022cc72952d1ed7d1946bbaf7
     public int eliminar(UUID id){
         try{
             Boolean existeDato=maestraRepository.existsById(id);
